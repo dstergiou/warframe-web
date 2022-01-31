@@ -1,0 +1,13 @@
+{% for item in items %}
+
+<tr>
+    <td>{{ item.name }}</td>
+    <td>{{ item.quantity}}</td>
+    <td>
+        <span>+</span>
+        <span>-</span>
+        <span>*</span>
+    </td>
+</tr>
+
+{% endfor %}
