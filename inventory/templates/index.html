@@ -4,7 +4,12 @@
 
 <div class="p-4">
     <input type="text" name="search" hx-post="/search/" hx-trigger="keyup changed delay:250ms" hx-target="#results"
-        placeholder="Item" class="form-control form-control-lg" />
+        placeholder="Item" class="form-control form-control-lg" list="items" autofocus/>
+        <datalist id="items">
+            {% for item in items %}
+            <option value="{{item.name}}"></option>
+            {% endfor %}
+        </datalist>
 </div>
 <div class="container">
     <table class="table table-hover">

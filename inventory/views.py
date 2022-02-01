@@ -8,7 +8,6 @@ def index(request):
     
     return render(request, 'index.html', {'items': items})
 
-
 @require_http_methods(['POST'])
 def search(request):
     search_item = request.POST['search']
@@ -19,8 +18,11 @@ def search(request):
     
     items = []
     for item in db_items:
-        if search_item in item.name.lower():
+        if search_item.lower() in item.name.lower():
             items.append(item)
             
     return render(request, 'item.html', {'items': items})
     
+
+def card(request):
+    return render(request, 'card.html', {'items': []})
